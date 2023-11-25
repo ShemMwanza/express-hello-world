@@ -1,9 +1,13 @@
 const express = require("express");
 const axios = require("axios");
+const cors = require("cors"); // Import cors middleware
 
 const app = express();
 const port = process.env.PORT || 3001;
 const API_KEY = process.env.API_KEY;
+
+// Use cors middleware
+app.use(cors());
 
 app.get("/crypto-news", async (req, res) => {
   try {
