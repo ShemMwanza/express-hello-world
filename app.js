@@ -9,24 +9,24 @@ const API_KEY = process.env.API_KEY;
 // Use cors middleware
 app.use(cors());
 
-app.get("/crypto-news", async (req, res) => {
+app.get("/productivity-news", async (req, res) => {
   try {
     const keyword = 'cryptocurrency';
     const response = await fetchNewsData(keyword);
     res.json(response);
   } catch (error) {
-    console.error('Error fetching crypto news:', error);
+    console.error('Error fetching crypto news:', error.message());
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 
-app.get("/blockchain-news", async (req, res) => {
+app.get("/tech-hacks-news", async (req, res) => {
   try {
-    const keyword = 'blockchain';
+    const keyword = 'tech hacks';
     const response = await fetchNewsData(keyword);
     res.json(response);
   } catch (error) {
-    console.error('Error fetching blockchain news:', error);
+    console.error('Error fetching tech hacks news:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
