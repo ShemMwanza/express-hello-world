@@ -11,7 +11,7 @@ app.use(cors());
 
 app.get("/productivity-news", async (req, res) => {
   try {
-    const keyword = 'cryptocurrency';
+    const keyword = 'productivity';
     const response = await fetchNewsData(keyword);
     res.json(response);
   } catch (error) {
