@@ -15,7 +15,7 @@ app.get("/productivity-news", async (req, res) => {
     const response = await fetchNewsData(keyword);
     res.json(response);
   } catch (error) {
-    console.error('Error fetching crypto news:', error.message());
+    console.error('Error fetching crypto news:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
