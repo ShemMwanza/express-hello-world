@@ -33,7 +33,7 @@ app.get("/tech-hacks-news", async (req, res) => {
 
 async function fetchNewsData(keyword) {
   try {
-    const response = await axios.get(`https://newsapi.org/v2/everything?q=${keyword}&sortBy=publishedAt&apiKey=${API_KEY}`);
+    const response = await axios.get(`https://newsapi.in/newsapi/search.php?key=${API_KEY}&q=${keyword}`);
     return response.data;
   } catch (error) {
     console.error('API Error:', error);
